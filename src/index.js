@@ -1,12 +1,19 @@
-import React from 'react';
+//default
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+//customized imports
+import './index.css';
+import Header from './base/header';
+import Content from './base/content';
+import Footer from './base/footer';
+
+ReactDOM.render( 
   <React.StrictMode>
-    <App />
+    <Header />
+    <Content />
+    <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );
