@@ -14,10 +14,10 @@ code {
 
 /*displaying content*/
 #home {
-  display: none;
+  display: block;
 }
 
-#choicepicks {
+#choicePicks {
   display: none;
 }
 
@@ -27,20 +27,25 @@ code {
 
 /* basic header styling */
 .header {
+  position: relative;
+  top: 0;
   background-color: #282c34;
-  min-height: 15vh;
+  height: 17vh;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 /* basic footer styling */
 .footer {
-  background-color: #c23e16;
-  min-height: 20vh;
+  position: absolute;
+  bottom: 0;
+  background-color: #282c34;
+  max-height: 15vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,17 +54,9 @@ code {
   color: white;
 }
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
 /* Style the buttons inside the tab */
 .tab button {
-  background-color: inherit;
-  float: left;
+  background-color: #282c34;
   border: none;
   outline: none;
   cursor: pointer;
@@ -76,12 +73,4 @@ code {
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
 }

@@ -5,20 +5,37 @@ import reportWebVitals from './reportWebVitals';
 
 //customized imports
 import './index.css';
-import Header from './base/header';
-import Content from './base/content';
 import Footer from './base/footer';
+import Home from './base/home';
+import ChoicePicks from './base/choicePicks';
+import Recommendations from './base/recommendations';
 
 ReactDOM.render( 
   <React.StrictMode>
-    <Header />
-    <Content />
-    <Footer />
+    <Home />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('home')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+ReactDOM.render( 
+  <React.StrictMode>
+    <ChoicePicks />
+  </React.StrictMode>,
+  document.getElementById('choicePicks')
+);
+
+ReactDOM.render( 
+  <React.StrictMode>
+    <Recommendations />
+  </React.StrictMode>,
+  document.getElementById('recommendations')
+);
+
+ReactDOM.render( 
+  <React.StrictMode>
+    <Footer />
+  </React.StrictMode>,
+  document.getElementById('footer')
+);
+
 reportWebVitals();

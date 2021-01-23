@@ -1,5 +1,4 @@
 import '../index.css';
-import Content from './content';
 
 function ChoicePicks() {
     return (
