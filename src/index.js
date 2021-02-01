@@ -9,6 +9,7 @@ import Footer from './base/footer';
 import Home from './base/home';
 import ChoicePicks from './base/choicePicks';
 import Recommendations from './base/recommendations';
+import Library from './base/librarian';
 
 ReactDOM.render( 
   <React.StrictMode>
@@ -29,6 +30,13 @@ ReactDOM.render(
     <Recommendations />
   </React.StrictMode>,
   document.getElementById('recommendations')
+);
+
+ReactDOM.render( 
+  <React.StrictMode>
+    <Library />
+  </React.StrictMode>,
+  document.getElementById('librarian')
 );
 
 ReactDOM.render( 

@@ -17,16 +17,25 @@
             document.getElementById('home').style.display = 'block';
             document.getElementById('choicePicks').style.display = 'none';
             document.getElementById('recommendations').style.display = 'none';
+            document.getElementById('librarian').style.display = 'none';
         }
         else if (screen == 1) {
             document.getElementById('home').style.display = 'none';
             document.getElementById('choicePicks').style.display = 'block';
             document.getElementById('recommendations').style.display = 'none';
+            document.getElementById('librarian').style.display = 'none';
         }
         else if (screen == 2) {
             document.getElementById('home').style.display = 'none';
             document.getElementById('choicePicks').style.display = 'none';
             document.getElementById('recommendations').style.display = 'block';
+            document.getElementById('librarian').style.display = 'none';
+        }
+        else if (screen == 3) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('choicePicks').style.display = 'none';
+            document.getElementById('recommendations').style.display = 'none';
+            document.getElementById('librarian').style.display = 'block';
         }
       }
     </script>
@@ -37,9 +46,10 @@
       <header class="header">
         <p>Carmel Clay Public Library</p>
         <div>
-          <button class = "tab button" onclick = "changeScreen('0')">Home</button>
-          <button class = "tab button" onclick = "changeScreen('1')">Choice Picks</button>
-          <button class = "tab button" onclick = "changeScreen('2')">Recommendations</button>
+          <button onclick = "changeScreen('0')">Home</button>
+          <button onclick = "changeScreen('1')">Choice Picks</button>
+          <button onclick = "changeScreen('2')">Recommendations</button>
+          <button onclick = "changeScreen('3')">Librarians Access</button>
         </div>
       </header>
     </div>
@@ -51,6 +61,7 @@
       <div id="home"></div>
       <div id="choicePicks"></div>
       <div id="recommendations"></div>
+      <div id="librarian"></div>
     </div>
 
     <div id="footer"></div>

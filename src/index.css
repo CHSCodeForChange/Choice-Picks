@@ -25,6 +25,10 @@ code {
   display: none;
 }
 
+#librarian {
+  display: none;
+}
+
 /* basic header styling */
 .header {
   position: relative;
@@ -54,23 +58,31 @@ code {
   color: white;
 }
 
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: #282c34;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
+.sidenav {
+  width: 30vh;
+  position: relative;
+  z-index: 1;
+  top: 1vh;
+  left: 1vh;
+  background: #eee;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.sidenav a {
+  text-decoration: none;
+  font-size: 3vh;
+  color: #2196F3;
+  display: block;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.mainbar {
+  position: relative;
+  width: 170vh;
+  z-index: 1;
+  top: -11vh;
+  left: 35vh;
+  background: #eee;
+}
+
+.book {
+  background-color: antiquewhite;
 }

@@ -1,8 +1,8 @@
 import '../index.css';
 
-function Book() {
+function Book(props) {
     return (
-        <p>This is a book.</p>
+        <p>This is a book named {props.name}.</p>
     );
 }
 
