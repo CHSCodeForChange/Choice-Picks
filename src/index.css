@@ -13,12 +13,12 @@ code {
 }
 
 /*displaying content*/
-#home {
+/* #home {
   display: block;
-}
+} */
 
 #choicePicks {
-  display: none;
+  display: block;
 }
 
 #recommendations {
