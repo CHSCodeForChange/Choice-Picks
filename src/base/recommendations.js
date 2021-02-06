@@ -7,16 +7,30 @@ class Recommendations extends Component{
         listOfBooks: [
             {name: "Harry Potter"},
             {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Micheal Vey"},
+            {name: "Harry Potter"},
+            {name: "Harry Potter"},
         ]
     }
 
     render() {
         return (
             <div>
-                <div class = "sidenav">
+                <div className = "sidenav">
                     {this.sideBar()}
                 </div>
-                <div class = "mainbar">
+                <div className = "mainbar">
                     {this.renderBooks()}
                 </div>
             </div>

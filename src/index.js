@@ -11,15 +11,6 @@ import ChoicePicks from './base/choicePicks';
 import Recommendations from './base/recommendations';
 import Library from './base/librarian';
 
-/*
-ReactDOM.render( 
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
-  document.getElementById('home')
-);
-*/
-
 ReactDOM.render( 
   <React.StrictMode>
     <ChoicePicks />
