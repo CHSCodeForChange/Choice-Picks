@@ -1,7 +1,7 @@
 import '../index.css';
 import React, {Component} from 'react';
 import Book from './book';
-import Recommendations from './recommendations';
+// import Recommendations from './recommendations';
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '../../node_modules/@brainhubeu/react-carousel/lib/style.css'
 
@@ -29,15 +29,16 @@ class ChoicePicks extends Component {
                     <img src="scytheBook.jpg" alt = "this is image two" width="200" height="350"/>
                     <img src="howToCodeBook.jpeg" aalt = "this is image three" width="200" height="350"/>
                     <img src="hungerGames.jpg" aalt = "this is image three" width="200" height="350"/>
-                    <img src="harryPotter.jpg" aalt = "this is image three" width="200" height="350"/>
+                    <Book name = 'Harry Potter' />
                 </Carousel>
             </div>
         );
     }
-    
+
     renderLatestBooks() {
         return (
             <div>
+            {/* this is still under testing */}
                 {/* {Recommendations.state.listOfBooks.map((book, index) => {
                     return (
                         <div class = "book" key = {index}>

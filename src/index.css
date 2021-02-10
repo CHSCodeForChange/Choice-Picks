@@ -122,3 +122,13 @@ footer {
   z-index: 3;
   display: none;
 }
+
+/* clickableview */
+.clickableView {
+  z-index: 3;
+  background-color: grey;
+  width: 50%;
+  height: 70%;
+  padding-left: 10vh;
+  padding-top: 30vh;
+}

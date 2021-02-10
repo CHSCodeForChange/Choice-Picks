@@ -1,26 +1,25 @@
 import React, {Component} from 'react';
 import Book from './book';
 import '../index.css';
+import ClickableView from './clickableView';
 
 class Recommendations extends Component{
     state = {
         listOfBooks: [
-            {name: "Harry Potter"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Micheal Vey"},
-            {name: "Harry Potter"},
-            {name: "Harry Potter"},
+            {name: "Harry Potter", displayMore: false},
+            {name: "Micheal Vey", displayMore: true},
+            {name: "Harry Potter", displayMore: false},
+            {name: "Micheal Vey", displayMore: false},
+            {name: "Harry Potter", displayMore: false},
+            {name: "Micheal Vey", displayMore: false},
+            {name: "Harry Potter", displayMore: false},
+            {name: "Micheal Vey", displayMore: false},
+            {name: "Harry Potter", displayMore: false},
+            {name: "Micheal Vey", displayMore: false},
+            {name: "Harry Potter", displayMore: false},
+            {name: "Micheal Vey", displayMore: false},
+            {name: "Harry Potter", displayMore: false},
+            {name: "Final Book", displayMore: false},
         ]
     }
 
@@ -60,13 +59,29 @@ class Recommendations extends Component{
             <div>
                 {this.state.listOfBooks.map((book, index) => {
                     return (
-                        <div class = "book" key = {index}>
-                            <Book name = {book.name} />
+                        <div className = "book" key = {index}>
+                            <Book name = {book.name}/>
+                            {book.displayMore ? this.showClickableView(book): null}
+                            <button onClick = {() => this.updateBook(index)}>View More Information</button>
                         </div>
                     );
                 })}
             </div>
         )
+    }
+
+    updateBook(index) {
+        this.state.listOfBooks.map((book) =>{
+            book.displayMore = false;
+        });
+        this.state.listOfBooks[index].displayMore = !this.state.listOfBooks[index].displayMore;
+        this.forceUpdate();
+    }
+
+    showClickableView(book) {
+        return (
+            <ClickableView name = {book.name}></ClickableView>
+        );
     }
 }
 
