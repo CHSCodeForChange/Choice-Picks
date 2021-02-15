@@ -35,6 +35,7 @@ class ChoicePicks extends Component {
         );
     }
 
+    //under work
     renderLatestBooks() {
         return (
             <div>

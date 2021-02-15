@@ -6,21 +6,24 @@ import ClickableView from './clickableView';
 class Recommendations extends Component{
     state = {
         listOfBooks: [
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: true},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Final Book", displayMore: false},
-        ]
+            {name: "Harry Potter"},
+            {name: "Micheal Vey"},
+            {name: "Harry Potter"},
+            {name: "Micheal Vey"},
+            {name: "Harry Potter"},
+            {name: "Micheal Vey"},
+            {name: "Harry Potter"},
+            {name: "Micheal Vey"},
+            {name: "Harry Potter"},
+            {name: "Micheal Vey"},
+            {name: "Harry Potter"},
+            {name: "Micheal Vey"},
+            {name: "Harry Potter"},
+            {name: "Micheal Vey"},
+        ],
+        currentBook: [
+            {},
+        ],
     }
 
     render() {
@@ -31,6 +34,14 @@ class Recommendations extends Component{
                 </div>
                 <div className = "mainbar">
                     {this.renderBooks()}
+                </div>
+                <div id = "moreInfoBox" className = "moreInfoBox">
+                    <div className ="content">
+                        <span onClick = {() => this.close()} className = "close">&times;</span>
+                        <div id = "bookInfo">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -61,8 +72,7 @@ class Recommendations extends Component{
                     return (
                         <div className = "book" key = {index}>
                             <Book name = {book.name}/>
-                            {book.displayMore ? this.showClickableView(book): null}
-                            <button onClick = {() => this.updateBook(index)}>View More Information</button>
+                            <button id="myBtn" onClick = {() => this.moreInfo(book)}>More Information</button>
                         </div>
                     );
                 })}
@@ -70,18 +80,15 @@ class Recommendations extends Component{
         )
     }
 
-    updateBook(index) {
-        this.state.listOfBooks.map((book) =>{
-            book.displayMore = false;
-        });
-        this.state.listOfBooks[index].displayMore = !this.state.listOfBooks[index].displayMore;
-        this.forceUpdate();
+    moreInfo(book) {
+        document.getElementById("moreInfoBox").style.display = "block";
+        // var content = <ClickableView name = {book.name}></ClickableView>;
+        var content = "Hello!";
+        document.getElementById('bookInfo').innerHTML = content;
     }
-
-    showClickableView(book) {
-        return (
-            <ClickableView name = {book.name}></ClickableView>
-        );
+    
+    close() {
+        document.getElementById("moreInfoBox").style.display = "none";
     }
 }
 
