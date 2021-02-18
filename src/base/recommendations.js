@@ -6,20 +6,20 @@ import ClickableView from './clickableView';
 class Recommendations extends Component{
     state = {
         listOfBooks: [
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: true},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Micheal Vey", displayMore: false},
-            {name: "Harry Potter", displayMore: false},
-            {name: "Final Book", displayMore: false},
+            {name: "book 0", displayMore: false, path: "wimpyKid.jpg"}, /* the path is the file name if the image is in the public folder */
+            {name: "book 1", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 2", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 3", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 4", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 5", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 6", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 7", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 8", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 9", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 10", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 11", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 12", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "Final Book", displayMore: false, path: "wimpyKid.jpg"},
         ]
     }
 
@@ -60,9 +60,11 @@ class Recommendations extends Component{
                 {this.state.listOfBooks.map((book, index) => {
                     return (
                         <div className = "book" key = {index}>
-                            <Book name = {book.name}/>
+                            <Book name = {book.name} path = {book.path} displayMore = {book.displayMore}/>
+                            <div class = "infoButton">
+                                <button onClick = {() => this.updateBook(index)}>View More Information</button>
+                            </div>
                             {book.displayMore ? this.showClickableView(book): null}
-                            <button onClick = {() => this.updateBook(index)}>View More Information</button>
                         </div>
                     );
                 })}
@@ -71,10 +73,14 @@ class Recommendations extends Component{
     }
 
     updateBook(index) {
-        this.state.listOfBooks.map((book) =>{
-            book.displayMore = false;
-        });
-        this.state.listOfBooks[index].displayMore = !this.state.listOfBooks[index].displayMore;
+        if (this.state.listOfBooks[index].displayMore == true) {
+            this.state.listOfBooks[index].displayMore = false;
+        } else{ 
+            this.state.listOfBooks.map((book) =>{
+                book.displayMore = false;
+            });
+            this.state.listOfBooks[index].displayMore = !this.state.listOfBooks[index].displayMore;
+        }
         this.forceUpdate();
     }
 

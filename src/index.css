@@ -97,19 +97,53 @@ footer {
   display: block;
 }
 
+/* book component */
+/* Aidan is working on this part */
+
 .mainbar {
-  position: relative;
-  width: 170vh;
+  position: absolute;
+  width: 80%;
   z-index: 1;
-  top: -11vh;
-  left: 35vh;
-  background: #eee;
+  top: 20%;
+  left: 20%;
+  padding-bottom: 7%;
+  background: white;
 }
 
-/* book component */
 .book {
-  background-color: antiquewhite;
+  background-color: #EEEEEE;
+  float: left;
+  bottom: 20%;
+  border-radius: 5%;
+  width: 40%;
 }
+
+.float-picture {
+  text-align: center;
+  border-radius: 8%;
+  margin-left: 20%;
+  padding: 2%;
+  width: 200px;
+  height: 400px;
+  background-color: green;
+}
+
+/* clickableview */
+.clickableView {
+  float: top;
+  z-index: 3;
+  background-color: grey;
+  width: 90%;
+  height: 100%;
+  padding-left: 10%;
+  padding-top: 10%;
+}
+
+.infoButton{
+  margin-left: 28%;
+}
+
+/* you are leaving Aidan's domain - happy coding :) */
 
 /* up button */
 .upbtn {
@@ -123,12 +157,3 @@ footer {
   display: none;
 }
 
-/* clickableview */
-.clickableView {
-  z-index: 3;
-  background-color: grey;
-  width: 50%;
-  height: 70%;
-  padding-left: 10vh;
-  padding-top: 30vh;
-}

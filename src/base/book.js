@@ -4,11 +4,13 @@ import React, {Component} from 'react';
 class Book extends Component {
     render() {
         return (
-            <div>
-                <p>This is a book named {this.props.name}.</p>
+            <div class = "float-picture">
+                <p>{this.props.name}</p>
+                <img src = {this.props.path} alt = "error loading preview" width="200" height="350"/>
             </div>
         );
     }
 }
+
 
 export default Book;

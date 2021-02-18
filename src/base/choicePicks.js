@@ -29,7 +29,7 @@ class ChoicePicks extends Component {
                     <img src="scytheBook.jpg" alt = "this is image two" width="200" height="350"/>
                     <img src="howToCodeBook.jpeg" aalt = "this is image three" width="200" height="350"/>
                     <img src="hungerGames.jpg" aalt = "this is image three" width="200" height="350"/>
-                    <Book name = 'Harry Potter' />
+                    <Book name = 'Harry Potter' path = "harryPotter.jpg"/>
                 </Carousel>
             </div>
         );
