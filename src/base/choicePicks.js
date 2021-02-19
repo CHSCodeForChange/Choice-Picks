@@ -25,16 +25,17 @@ class ChoicePicks extends Component {
                         },
                     ]}
                 >
-                    <img src="wimpyKid.jpg" alt = "this is image one" width="200" height="350"/>
-                    <img src="scytheBook.jpg" alt = "this is image two" width="200" height="350"/>
-                    <img src="howToCodeBook.jpeg" aalt = "this is image three" width="200" height="350"/>
-                    <img src="hungerGames.jpg" aalt = "this is image three" width="200" height="350"/>
+                    <Book name = 'Diary of a Wimpy Kid' path = "wimpyKid.jpg"/>
+                    <Book name = 'Scythe' path = "scytheBook.jpg"/>
+                    <Book name = 'How to Code' path = "howToCodeBook.jpeg"/>
+                    <Book name = 'the Hunger Games' path = "hungerGames.jpg"/>
                     <Book name = 'Harry Potter' path = "harryPotter.jpg"/>
                 </Carousel>
             </div>
         );
     }
 
+    //under work
     renderLatestBooks() {
         return (
             <div>

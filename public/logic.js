@@ -1,3 +1,14 @@
+//window update settings
+window.onload = function() {
+    progressBar();
+};
+
+window.onscroll = function() {
+    upButton();
+    progressBar();
+};
+
+//to display different screens
 function changeScreen(screen) {
     if (screen == 1) {
         document.getElementById('choicePicks').style.display = 'block';
@@ -14,14 +25,10 @@ function changeScreen(screen) {
         document.getElementById('recommendations').style.display = 'none';
         document.getElementById('librarian').style.display = 'block';
     }
+    progressBar();
 }
 
-window.onscroll = function() {
-    showUpButton();
-    //progressBar();
-};
-
-function showUpButton() {
+function upButton() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     if (winScroll != 0) {
         document.getElementById('upbtn').style.display = 'block';
@@ -31,10 +38,20 @@ function showUpButton() {
     }
 }
 
-//in testing
-// function progressBar() {
-//     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-//     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-//     var scrolled = (winScroll / height) * 100;
-//     document.getElementById("myBar").style.width = scrolled + "%";
-// }
+function progressBar() {
+    var scrollHeight = document.body.scrollHeight;
+    var clientHeight = document.documentElement.clientHeight;
+    var hasVerticalScrollbar = scrollHeight > clientHeight;
+    if (hasVerticalScrollbar) {
+        document.getElementById('myProgress').style.display = 'block';
+        document.getElementById('myBar').style.display = 'block';
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = scrollHeight - clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+    }
+    else {
+        document.getElementById('myProgress').style.display = 'none';
+        document.getElementById('myBar').style.display = 'none';
+    }
+}

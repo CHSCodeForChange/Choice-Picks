@@ -6,20 +6,20 @@ import ClickableView from './clickableView';
 class Recommendations extends Component{
     state = {
         listOfBooks: [
-            {name: "book 0", displayMore: false, path: "wimpyKid.jpg"}, /* the path is the file name if the image is in the public folder */
-            {name: "book 1", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 2", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 3", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 4", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 5", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 6", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 7", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 8", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 9", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 10", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 11", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "book 12", displayMore: false, path: "wimpyKid.jpg"},
-            {name: "Final Book", displayMore: false, path: "wimpyKid.jpg"},
+            {name: "book 0", path: "wimpyKid.jpg"}, /* the path is the file name if the image is in the public folder */
+            {name: "book 1", path: "wimpyKid.jpg"},
+            {name: "book 2", path: "wimpyKid.jpg"},
+            {name: "book 3", path: "wimpyKid.jpg"},
+            {name: "book 4", path: "wimpyKid.jpg"},
+            {name: "book 5", path: "wimpyKid.jpg"},
+            {name: "book 6", path: "wimpyKid.jpg"},
+            {name: "book 7", path: "wimpyKid.jpg"},
+            {name: "book 8", path: "wimpyKid.jpg"},
+            {name: "book 9", path: "wimpyKid.jpg"},
+            {name: "book 10", path: "wimpyKid.jpg"},
+            {name: "book 11", path: "wimpyKid.jpg"},
+            {name: "book 12", path: "wimpyKid.jpg"},
+            {name: "Final Book", path: "wimpyKid.jpg"},
         ]
     }
 
@@ -31,6 +31,14 @@ class Recommendations extends Component{
                 </div>
                 <div className = "mainbar">
                     {this.renderBooks()}
+                </div>
+                <div id = "moreInfoBox" className = "moreInfoBox">
+                    <div className ="content">
+                        <span onClick = {() => this.close()} className = "close">&times;</span>
+                        <div id = "bookInfo">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         )
@@ -60,11 +68,10 @@ class Recommendations extends Component{
                 {this.state.listOfBooks.map((book, index) => {
                     return (
                         <div className = "book" key = {index}>
-                            <Book name = {book.name} path = {book.path} displayMore = {book.displayMore}/>
+                            <Book name = {book.name} path = {book.path} />
                             <div class = "infoButton">
-                                <button onClick = {() => this.updateBook(index)}>View More Information</button>
+                                <button id="myBtn" onClick = {() => this.moreInfo(book)}>More Information</button>
                             </div>
-                            {book.displayMore ? this.showClickableView(book): null}
                         </div>
                     );
                 })}
@@ -72,22 +79,15 @@ class Recommendations extends Component{
         )
     }
 
-    updateBook(index) {
-        if (this.state.listOfBooks[index].displayMore == true) {
-            this.state.listOfBooks[index].displayMore = false;
-        } else{ 
-            this.state.listOfBooks.map((book) =>{
-                book.displayMore = false;
-            });
-            this.state.listOfBooks[index].displayMore = !this.state.listOfBooks[index].displayMore;
-        }
-        this.forceUpdate();
+    moreInfo(book) {
+        document.getElementById("moreInfoBox").style.display = "block";
+        // var content = <ClickableView name = {book.name}></ClickableView>;
+        var content = "This would be a discription of the book :)";
+        document.getElementById('bookInfo').innerHTML = content;
     }
-
-    showClickableView(book) {
-        return (
-            <ClickableView name = {book.name}></ClickableView>
-        );
+    
+    close() {
+        document.getElementById("moreInfoBox").style.display = "none";
     }
 }
 
