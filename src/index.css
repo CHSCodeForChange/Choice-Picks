@@ -48,6 +48,10 @@ html {
   display: none;
 }
 
+#nominations {
+  display: none;
+}
+
 /* basic header styling */
 .header {
   position: relative;
@@ -97,25 +101,27 @@ footer {
   display: block;
 }
 
-/* book component */
-/* Aidan is working on this part */
-
 .mainbar {
-  position: absolute;
-  width: 80%;
+  position: relative;
+  width: 170vh;
   z-index: 1;
-  top: 20%;
-  left: 20%;
-  padding-bottom: 7%;
-  background: white;
+  top: -11vh;
+  left: 35vh;
+  background: #eee;
 }
 
+/* book component */
 .book {
-  background-color: #EEEEEE;
+  background-color: #7c3636;
   float: left;
   bottom: 20%;
   border-radius: 5%;
-  width: 40%;
+  width: 30%;
+  text-align: center;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 5vh;
+  
 }
 
 .float-picture {
@@ -123,27 +129,10 @@ footer {
   border-radius: 8%;
   margin-left: 20%;
   padding: 2%;
-  width: 200px;
-  height: 400px;
-  background-color: #EEEEEE;
+  width: 30vh;
+  height: 60vh;
+  background-color: #daafaf;
 }
-
-/* clickableview */
-.clickableView {
-  float: top;
-  z-index: 3;
-  background-color: grey;
-  width: 90%;
-  height: 100%;
-  padding-left: 10%;
-  padding-top: 10%;
-}
-
-.infoButton{
-  margin-left: 35%;
-}
-
-/* you are leaving Aidan's domain - happy coding :) */
 
 /* up button */
 .upbtn {
@@ -206,6 +195,15 @@ footer {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* login page handler */
+#login {
+  display: block;
+}
+
+#loginContent {
+  display: none;
 }
 /* .clickableView {
   z-index: 4;

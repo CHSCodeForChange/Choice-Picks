@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 //customized imports
 import './index.css';
 import Footer from './base/footer';
-import Home from './base/home';
 import ChoicePicks from './base/choicePicks';
 import Recommendations from './base/recommendations';
 import Library from './base/librarian';
+import Nominations from './base/nominations';
 
 ReactDOM.render( 
   <React.StrictMode>
@@ -30,6 +30,13 @@ ReactDOM.render(
     <Library />
   </React.StrictMode>,
   document.getElementById('librarian')
+);
+
+ReactDOM.render( 
+  <React.StrictMode>
+    <Nominations />
+  </React.StrictMode>,
+  document.getElementById('nominations')
 );
 
 ReactDOM.render( 

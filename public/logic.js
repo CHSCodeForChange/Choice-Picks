@@ -14,16 +14,25 @@ function changeScreen(screen) {
         document.getElementById('choicePicks').style.display = 'block';
         document.getElementById('recommendations').style.display = 'none';
         document.getElementById('librarian').style.display = 'none';
+        document.getElementById('nominations').style.display = 'none';
     }
     else if (screen == 2) {
         document.getElementById('choicePicks').style.display = 'none';
         document.getElementById('recommendations').style.display = 'block';
         document.getElementById('librarian').style.display = 'none';
+        document.getElementById('nominations').style.display = 'none';
     }
     else if (screen == 3) {
         document.getElementById('choicePicks').style.display = 'none';
         document.getElementById('recommendations').style.display = 'none';
         document.getElementById('librarian').style.display = 'block';
+        document.getElementById('nominations').style.display = 'none';
+    }
+    else if (screen == 4) {
+        document.getElementById('choicePicks').style.display = 'none';
+        document.getElementById('recommendations').style.display = 'none';
+        document.getElementById('librarian').style.display = 'none';
+        document.getElementById('nominations').style.display = 'block';
     }
     progressBar();
 }

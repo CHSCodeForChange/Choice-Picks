@@ -25,11 +25,11 @@ class ChoicePicks extends Component {
                         },
                     ]}
                 >
-                    <Book name = 'Diary of a Wimpy Kid' path = "wimpyKid.jpg"/>
-                    <Book name = 'Scythe' path = "scytheBook.jpg"/>
-                    <Book name = 'How to Code' path = "howToCodeBook.jpeg"/>
-                    <Book name = 'the Hunger Games' path = "hungerGames.jpg"/>
                     <Book name = 'Harry Potter' path = "harryPotter.jpg"/>
+                    <Book name = 'Hunger Games' path = "hungerGames.jpg"/>
+                    <Book name = 'How to Code' path = "howToCodeBook.jpeg"/>
+                    <Book name = 'Scythe' path = "scytheBook.jpg"/>
+                    <Book name = 'Dairy of a Wimpy Kid' path = "wimpyKid.jpg"/>
                 </Carousel>
             </div>
         );

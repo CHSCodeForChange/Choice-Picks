@@ -6,21 +6,14 @@ import ClickableView from './clickableView';
 class Recommendations extends Component{
     state = {
         listOfBooks: [
-            {name: "book 0", path: "wimpyKid.jpg"}, /* the path is the file name if the image is in the public folder */
-            {name: "book 1", path: "wimpyKid.jpg"},
-            {name: "book 2", path: "wimpyKid.jpg"},
-            {name: "book 3", path: "wimpyKid.jpg"},
-            {name: "book 4", path: "wimpyKid.jpg"},
-            {name: "book 5", path: "wimpyKid.jpg"},
-            {name: "book 6", path: "wimpyKid.jpg"},
-            {name: "book 7", path: "wimpyKid.jpg"},
-            {name: "book 8", path: "wimpyKid.jpg"},
-            {name: "book 9", path: "wimpyKid.jpg"},
-            {name: "book 10", path: "wimpyKid.jpg"},
-            {name: "book 11", path: "wimpyKid.jpg"},
-            {name: "book 12", path: "wimpyKid.jpg"},
-            {name: "Final Book", path: "wimpyKid.jpg"},
-        ]
+            /* the path is the file name if the image is in the public folder */
+            {name: "Dairy of a Wimpy Kid", path: "wimpyKid.jpg"},
+            {name: "Scythe", path: "scytheBook.jpg"},
+            {name: "Harry Potter", path: "harryPotter.jpg"},
+            {name: "How to Code", path: "howToCodeBook.jpeg"},
+            {name: "Hunger Games", path: "hungerGames.jpg"},
+        ],
+        currentBookPath: "wimpyKid.jpg",
     }
 
     render() {
@@ -36,7 +29,11 @@ class Recommendations extends Component{
                     <div className ="content">
                         <span onClick = {() => this.close()} className = "close">&times;</span>
                         <div id = "bookInfo">
-                            
+                            <div id = "picture">
+                                <img src = {this.state.currentBookPath} width = "250" height = "400"/>
+                            </div>
+                            <div id = "content">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,10 +65,10 @@ class Recommendations extends Component{
                 {this.state.listOfBooks.map((book, index) => {
                     return (
                         <div className = "book" key = {index}>
-                            <Book name = {book.name} path = {book.path} />
-                            <div class = "infoButton">
-                                <button id="myBtn" onClick = {() => this.moreInfo(book)}>More Information</button>
-                            </div>
+                            <Book name = {book.name} path = {book.path}/>
+                            <br />
+                            <button id="myBtn" onClick = {() => this.moreInfo(book)}>More Information</button>
+                            <br />
                         </div>
                     );
                 })}
@@ -81,13 +78,19 @@ class Recommendations extends Component{
 
     moreInfo(book) {
         document.getElementById("moreInfoBox").style.display = "block";
-        // var content = <ClickableView name = {book.name}></ClickableView>;
-        var content = "This would be a discription of the book :)";
-        document.getElementById('bookInfo').innerHTML = content;
+        this.setState({currentBookPath: book.path});
+        const content = this.toString(book);
+        document.getElementById('content').innerHTML = content;
     }
     
     close() {
         document.getElementById("moreInfoBox").style.display = "none";
+    }
+
+    toString(book) {
+        let string = "Book name: " + book.name;
+        //add other information here
+        return string;
     }
 }
 
