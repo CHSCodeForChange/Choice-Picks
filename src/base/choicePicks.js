@@ -10,7 +10,7 @@ class ChoicePicks extends Component {
     render() {
         return (
             <div>
-                <p>This is choice picks.</p>
+                <br/><br/>
                 {this.renderLatestBooks()}
 
                 <Carousel

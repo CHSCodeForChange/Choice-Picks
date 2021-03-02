@@ -22,6 +22,7 @@ class Library extends Component{
         const createNewAccount = (this.state.newAccount) ? this.createNewAccount(): null;
         return (
             <div>
+                <br/>
                 {this.login()}
                 <div id = "loginContent">
                     <button onClick = {(e) => this.toggle(e)}>New Account</button>
