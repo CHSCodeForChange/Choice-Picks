@@ -15,15 +15,21 @@
 
     <title>Choice Picks Collection</title>
 
-    <header class="header">
-      <p>Carmel Clay Public Library</p>
-      <div>
-        <button onclick = "changeScreen('1')">Choice Picks</button>
-        <button onclick = "changeScreen('2')">Recommendations</button>
-        <button onclick = "changeScreen('3')">Librarians Access</button>
-        <button onclick = "changeScreen('4')">Book Nominations</button>
-      </div>
-    </header>
+    <div>
+      <header class="header">
+        <img id= "logo" src="icon.jpg" alt="CCPL Logo" height: 10vh>
+        <p id="Title">Carmel Clay Public Library</p>
+
+        <table id="NavBar">
+            <tr>
+            <td><button onclick = "changeScreen('0')">Home</button></td>
+            <td><button onclick = "changeScreen('1')">Choice Picks</button></td>
+            <td><button onclick = "changeScreen('2')">Recommendations</button></td>
+            <td><button onclick = "changeScreen('3')">Librarians Access</button></td>
+          </tr>
+       </table>
+      </header>
+    </div>
   </head>
 
   <body>

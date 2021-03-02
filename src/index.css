@@ -56,7 +56,7 @@ html {
 .header {
   position: relative;
   top: 0;
-  background-color: #282c34;
+  background-color: #102959;
   height: 17vh;
   width: 100%;
   display: flex;
@@ -66,6 +66,48 @@ html {
   color: white;
 }
 
+/* basic Nav bar styling */
+#NavBar {
+  width : 100%;
+  text-align: center;
+  background-color: #102959;
+  vertical-align: top;
+  position: relative;
+  top: -21vh;
+  border-top: 3px solid white;
+}
+
+/* Styling for buttons in the navbar */
+/*Note to seperate if more buttons added not in navbar */
+button {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif sans-serif;
+  border: none;
+  background-color: #102959;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: -0.75vh; 
+  font-size: 3vh;
+}
+
+/*Styling of the Title of the Website (Carmel Clay Public Library) */
+#Title {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Serif, Sans-serif;
+  color: rgb(255, 255, 255);
+  position: relative;
+  top: -15vh;
+  font-size: calc(30px + 2vmin);
+
+}
+
+/*Styling of the website logo */
+#logo {
+  height: 10vh;
+  margin-left: -150vh;
+  margin-top: 3.5vh;
+}
+
+
 /* basic footer styling */
 footer {
   position: fixed;
@@ -73,7 +115,7 @@ footer {
   bottom:0;
   left:0;
   right:0;
-  background-color: #282c34;
+  background-color: #102959;
   max-height: 15vh;
   width: 100%;
   display: flex;
