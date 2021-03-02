@@ -1,3 +1,14 @@
+// var fs = require('fs');
+
+// BrowserFS.install(window);
+// BrowserFS.configure({
+//   fs: "LocalStorage"
+// }, function(e) {
+//   if (e) {
+//     throw e;
+//   }
+// });
+
 //window update settings
 window.onload = function() {
     progressBar();
@@ -37,6 +48,7 @@ function changeScreen(screen) {
     progressBar();
 }
 
+//handles the logic of the up button
 function upButton() {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     if (winScroll != 0) {
@@ -47,6 +59,7 @@ function upButton() {
     }
 }
 
+//handles logic for the progress bar
 function progressBar() {
     var scrollHeight = document.body.scrollHeight;
     var clientHeight = document.documentElement.clientHeight;
@@ -63,4 +76,10 @@ function progressBar() {
         document.getElementById('myProgress').style.display = 'none';
         document.getElementById('myBar').style.display = 'none';
     }
+}
+
+//updates credentials in text file
+function updateFile(newLine) {
+    alert(newLine);
+    // window.fs.write(__dirname + '/src/base/credentials.txt', '\n' + newLine);
 }
