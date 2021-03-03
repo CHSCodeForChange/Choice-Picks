@@ -1,57 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app"/>
+    <head>
+      <title>Choice Picks Collection</title>
+      
+      <!-- meta data -->
+      <meta charset="utf-8">
+      <meta name="theme-color" content="#000000" />
+      <meta name="description" content="Web site created for Carmel Clay Public Library's Choice Picks Collection."/>
 
-    <!-- css + regular js links -->
-    <link rel="stylesheet" href="../src/index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <script src="./logic.js"></script>
-    <script type="text/javascript" src="browserfs.min.js"></script>
+      <!-- regular css + js-->
+      <!-- <link rel="stylesheet" href="../src/index.css"> -->
+      <script src="./logic.js"></script>
+      <link rel="shortcut icon" href="icon.jpg">
 
-    <link rel="icon" href="./icon.jpg">
-
-    <title>Choice Picks Collection</title>
-
-    <div>
-      <header class="header">
-        <img id= "logo" src="icon.jpg" alt="CCPL Logo">
-        <p id="Title">Carmel Clay Public Library</p>
-        <br />
-
-        <table id="NavBar">
-            <tr>
-            <td><button onclick = "changeScreen('1')">Choice Picks</button></td>
-            <td><button onclick = "changeScreen('2')">Recommendations</button></td>
-            <td><button onclick = "changeScreen('3')">Librarians Access</button></td>
-            <td><button onclick = "changeScreen('4')">Nominations</button></td>
-          </tr>
-       </table>
-      </header>
-    </div>
-  </head>
+      <!-- imported styling + js -->
+      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
+      <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="./css/style.css" rel="stylesheet" type="text/css">
+      <link href="./css/font-awesome.css" rel="stylesheet" type="text/css">
+      <link href="./css/responsive.css" rel="stylesheet" type="text/css">
+      <link href="./css/magnific-popup.css" rel="stylesheet" type="text/css">
+      <link href="./css/animate.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    </head>
 
   <body>
-    <!-- react based components-->
-    <div id = "body">
-      <div id="choicePicks"></div>
-      <div id="recommendations"></div>
-      <div id="librarian"></div>
-      <div id="nominations"></div>
-    </div>
-
-    <!-- other stuff -->
-    <a href="#" id = 'upbtn' class="upbtn"> <i class="fas fa-arrow-up" color="#FFC802"></i></a>
-
-    <!-- footer - also react based -->
-    <footer>
-      <div id="footer"></div>
+    <div>
+      <!-- progress bar -->
       <div id="myProgress">
         <div id="myBar"></div>
       </div>
+
+      <!-- intro page -->
+      <header class="header" id="header">
+        <div class="container">
+          <h1 class="animated fadeInDown delay-04s" id = "title">Choice Picks Collection</h1>
+          <figure class="logo animated fadeInDown delay-07s">
+            <a href="https://carmelclaylibrary.org/" target="_blank"><img src="logo.png" alt="CCPL Logo" id = "CCPLLogo"></a>
+          </figure>
+          <ul class="we-create animated fadeInUp delay-1s">
+            <br/><br/><br/><br/><br/>
+            <a id = "downBtn" href= "#nav"><div class="scroll-down"></div></a>
+          </ul>
+      </header>
+    </div>
+
+    <!-- nav bar -->
+    <nav class="main-nav-outer" id="nav">
+      <div class="container">
+        <ul class="main-nav">
+          <li><a onclick = "changeScreen('1')">Home</a></li>
+          <li><a onclick = "changeScreen('2')">Recommendations</a></li>
+          <li><a onclick = "changeScreen('4')">Nominations</a></li>
+          <li><a onclick = "changeScreen('3')">Librarians Access</a></li>
+        </ul>
+        <a class="res-nav_click" href="#"><i class="fa fa-bars"></i></a>
+      </div>
+    </nav>
+
+    <!-- content -->
+    <div class="container" id = "content">
+      <section>
+        <!-- react based components-->
+        <div id = "body">
+          <div class = "content1" id="choicePicks"></div>
+          <div class = "content1" id="recommendations"></div>
+          <div class = "content1" id="librarian"></div>
+          <div class = "content1" id="nominations"></div>
+        </div>
+      <section>
+    </div>
+  
+    <!-- up button -->
+    <a href="#" id = 'upbtn' class="upbtn"> <i class="fas fa-arrow-up" color="#FFC802"></i></a>
+
+    <!-- footer -->
+    <footer class="footer" id = "footer">
     </footer>
+
   </body>
 </html>

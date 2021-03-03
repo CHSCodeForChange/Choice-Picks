@@ -1,15 +1,15 @@
 //default
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 //customized imports
 import './index.css';
-import Footer from './base/footer';
 import ChoicePicks from './base/choicePicks';
 import Recommendations from './base/recommendations';
 import Library from './base/librarian';
 import Nominations from './base/nominations';
+import Footer from './base/footer';
 
 ReactDOM.render( 
   <React.StrictMode>
