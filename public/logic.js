@@ -57,6 +57,7 @@ function changeScreen(screen) {
         document.getElementById('recommendations').style.display = 'none';
         document.getElementById('librarian').style.display = 'none';
         document.getElementById('nominations').style.display = 'none';
+        document.getElementById('contacts').style.display = 'none';
         document.getElementById('title').innerHTML = 'Choice Picks Collection';
     }
     else if (screen == 2) {
@@ -64,6 +65,7 @@ function changeScreen(screen) {
         document.getElementById('recommendations').style.display = 'block';
         document.getElementById('librarian').style.display = 'none';
         document.getElementById('nominations').style.display = 'none';
+        document.getElementById('contacts').style.display = 'none';
         document.getElementById('title').innerHTML = 'Recommendations';
     }
     else if (screen == 3) {
@@ -71,6 +73,7 @@ function changeScreen(screen) {
         document.getElementById('recommendations').style.display = 'none';
         document.getElementById('librarian').style.display = 'block';
         document.getElementById('nominations').style.display = 'none';
+        document.getElementById('contacts').style.display = 'none';
         document.getElementById('title').innerHTML = 'Librarians Access';
     }
     else if (screen == 4) {
@@ -78,6 +81,7 @@ function changeScreen(screen) {
         document.getElementById('recommendations').style.display = 'none';
         document.getElementById('librarian').style.display = 'none';
         document.getElementById('nominations').style.display = 'block';
+        document.getElementById('contacts').style.display = 'none';
         document.getElementById('title').innerHTML = 'Nominations';
     }
     $('html, body').animate({ scrollTop: 0 }, 'fast');

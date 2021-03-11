@@ -10,6 +10,7 @@ import Recommendations from './base/recommendations';
 import Library from './base/librarian';
 import Nominations from './base/nominations';
 import Footer from './base/footer';
+import Contacts from './base/contacts';
 
 ReactDOM.render( 
   <React.StrictMode>
@@ -37,6 +38,13 @@ ReactDOM.render(
     <Nominations />
   </React.StrictMode>,
   document.getElementById('nominations')
+);
+
+ReactDOM.render( 
+  <React.StrictMode>
+    <Contacts />
+  </React.StrictMode>,
+  document.getElementById('contacts')
 );
 
 ReactDOM.render( 

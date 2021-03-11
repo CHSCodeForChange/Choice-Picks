@@ -6,14 +6,13 @@ import ClickableView from './clickableView';
 class Recommendations extends Component{
     state = {
         listOfBooks: [
-            /* the path is the file name if the image is in the public folder */
-            {name: "Dairy of a Wimpy Kid", path: "wimpyKid.jpg"},
-            {name: "Scythe", path: "scytheBook.jpg"},
-            {name: "Harry Potter", path: "harryPotter.jpg"},
-            {name: "How to Code", path: "howToCodeBook.jpeg"},
-            {name: "Hunger Games", path: "hungerGames.jpg"},
+            {name: "Dairy of a Wimpy Kid", path: "https://prodimage.images-bn.com/pimages/9781419741869_p0_v1_s550x406.jpg"},
+            {name: "Scythe", path: "https://images-na.ssl-images-amazon.com/images/I/61dMoTN7t1L.jpg"},
+            {name: "Harry Potter", path: "https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg"},
+            {name: "How to Code", path: "https://images-na.ssl-images-amazon.com/images/I/81mT0cKE0oL.jpg"},
+            {name: "Hunger Games", path: "https://images-na.ssl-images-amazon.com/images/I/61JfGcL2ljL.jpg"},
         ],
-        currentBookPath: "wimpyKid.jpg",
+        currentBookPath: "null",
     }
 
     render() {
@@ -26,14 +25,13 @@ class Recommendations extends Component{
                     {this.renderBooks()}
                 </div>
                 <div id = "moreInfoBox" className = "moreInfoBox">
+                    <span onClick = {() => this.close()} className = "close">&times;</span>
                     <div className ="content">
-                        <span onClick = {() => this.close()} className = "close">&times;</span>
-                        <div id = "bookInfo">
-                            <div id = "picture">
-                                <img src = {this.state.currentBookPath} width = "250" height = "400"/>
-                            </div>
-                            <div id = "content">
-                            </div>
+                        <div id = "picture">
+                            <img src = {this.state.currentBookPath} width = "250" height = "400"/>
+                        </div>
+                        <div id = "content">
+
                         </div>
                     </div>
                 </div>
@@ -79,7 +77,7 @@ class Recommendations extends Component{
     moreInfo(book) {
         document.getElementById("moreInfoBox").style.display = "block";
         this.setState({currentBookPath: book.path});
-        const content = this.toString(book);
+        const content = toString(book);
         document.getElementById('content').innerHTML = content;
     }
     

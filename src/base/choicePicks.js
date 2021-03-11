@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '../../node_modules/@brainhubeu/react-carousel/lib/style.css';
-
 import '../index.css';
 import Book from './book';
-
 
 class ChoicePicks extends Component {
     render() {
         return (
             <div>
-                {/* {this.renderLatestBooks()} */}
                 <Carousel
                     plugins={[
                         'infinite',
@@ -23,34 +20,15 @@ class ChoicePicks extends Component {
                         },
                     ]}
                 >
-                    <Book name = 'Harry Potter' path = "harryPotter.jpg"/>
-                    <Book name = 'Hunger Games' path = "hungerGames.jpg"/>
-                    <Book name = 'How to Code' path = "howToCodeBook.jpeg"/>
-                    <Book name = 'Scythe' path = "scytheBook.jpg"/>
-                    <Book name = 'Dairy of a Wimpy Kid' path = "wimpyKid.jpg"/>
+                    <Book name = 'Harry Potter' path = "https://images-na.ssl-images-amazon.com/images/I/81iqZ2HHD-L.jpg"/>
+                    <Book name = 'Hunger Games' path = "https://images-na.ssl-images-amazon.com/images/I/61JfGcL2ljL.jpg"/>
+                    <Book name = 'How to Code' path = "https://images-na.ssl-images-amazon.com/images/I/81mT0cKE0oL.jpg"/>
+                    <Book name = 'Scythe' path = "https://images-na.ssl-images-amazon.com/images/I/61dMoTN7t1L.jpg"/>
+                    <Book name = 'Dairy of a Wimpy Kid' path = "https://prodimage.images-bn.com/pimages/9781419741869_p0_v1_s550x406.jpg"/>
                 </Carousel>
             </div>
         );
     }
-
-    //under work
-    // renderLatestBooks() {
-    //     return (
-    //         <div>
-    //         {/* this is still under testing */}
-    //             {/* {Recommendations.state.listOfBooks.map((book, index) => {
-    //                 return (
-    //                     <div class = "book" key = {index}>
-    //                         <Book name = {book.name} />
-    //                     </div>
-    //                 );
-    //             })} */}
-    //             {/* what to do here is have a common parent class that holds the access to all the books and pass the state down to both this
-    //             and recommendations page as a prop. this way, we can avoid multiple copies of the same database. i heard we are supposed
-    //             to use redux for this  */}
-    //         </div>
-    //     );
-    // }  
 }
 
 export default ChoicePicks;

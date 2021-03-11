@@ -25,6 +25,7 @@ class Library extends Component{
                 <br/>
                 {this.login()}
                 <div id = "loginContent">
+                    {/* database stuff */}
                     <button onClick = {(e) => this.toggle(e)}>New Account</button>
                     {createNewAccount}
                 </div>
@@ -48,7 +49,7 @@ class Library extends Component{
                     <br />
                     <label>
                             Password: 
-                            <input type="text" id = "password" />
+                            <input type="password" id = "password" />
                     </label>
                     <br />
                     <input type="submit" value="Submit" />
@@ -68,9 +69,9 @@ class Library extends Component{
             const endI = line.indexOf(",");
             let rUsername = line.substring(beginI, endI).trim();
             console.log(rUsername);
-            if (username == rUsername) {
+            if (username === rUsername) {
                 let rPassword = this.state.lines[0][i].substring(endI + 12).trim();
-                if (password == rPassword) {
+                if (password === rPassword) {
                     authenticated = true;
                     break;
                 }
@@ -93,15 +94,19 @@ class Library extends Component{
                 <form onSubmit = {this.handleNewAccount}>
                     <label>
                             Account Password: 
-                            <input type="text" id = "accPass" />
+                            <input type="password" id = "accPass" />
                     </label>
                     <label>
-                            New Account Username: 
+                            New Username: 
                             <input type="text" id = "newU" />
                     </label>
                     <label>
-                            New Account Password: 
-                            <input type="text" id = "newP" />
+                            New Password: 
+                            <input type="password" id = "newP" />
+                    </label>
+                    <label>
+                            Confirm New Password: 
+                            <input type="password" id = "confirmP" />
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
@@ -112,22 +117,27 @@ class Library extends Component{
     handleNewAccount(event) {
         event.preventDefault()
         let accPass = document.getElementById("accPass").value;
-        if (accPass == document.getElementById("password").value) {
-            let newU = document.getElementById("newU").value;
+        if (accPass === document.getElementById("password").value) {
             let newP = document.getElementById("newP").value;
-            let newLine = "username: " + newU + ", password: " + newP;
-            // localStorage.setItem('1', newLine);
-            // console.log(localStorage.getItem('1') + "local storage");
-            // this.state.lines[0].add(newLine);
-            // const fs = require('fs');
-            // fs.appendFile('./credentials.txt', '\nRight there up on Broadway', (err) => {
-            //     if (err) throw err;
-            //     console.log('The lyrics were updated!');
-            // });
-            
-            // using(StreamWrite sw = new StreamWriter("file.txt"))
-            // credential.txt
-            window.updateFile(newLine);
+            let confirmP = document.getElementById("confirmP").value;
+            if (newP === confirmP) {
+                let newU = document.getElementById("newU").value;
+                let newLine = "username: " + newU + ", password: " + newP;
+                // localStorage.setItem('1', newLine);
+                // console.log(localStorage.getItem('1') + "local storage");
+                // this.state.lines[0].add(newLine);
+                // const fs = require('fs');
+                // fs.appendFile('./credentials.txt', '\nRight there up on Broadway', (err) => {
+                //     if (err) throw err;
+                //     console.log('The lyrics were updated!');
+                // });
+                // using(StreamWrite sw = new StreamWriter("file.txt"))
+                // credential.txt
+                window.updateFile(newLine);
+            }
+            else {
+                alert("Passwords do not match!");
+            }
         }
         else {
             alert("Incorrect password!");
@@ -136,49 +146,3 @@ class Library extends Component{
 }
 
 export default Library;
-
-
-// import React, { useState } from "react";
-// import Form from "react-bootstrap/Form";
-// import Button from "react-bootstrap/Button";
-// import '../index.css';
-
-// export default function Library() {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   function validateForm() {
-//     return email.length > 0 && password.length > 0;
-//   }
-
-//   function handleSubmit(event) {
-//     event.preventDefault();
-//   }
-
-//   return (
-//     <div className="Login">
-//       <Form onSubmit={handleSubmit}>
-//         <Form.Group size="lg" controlId="email">
-//           <Form.Label>Email</Form.Label>
-//           <Form.Control
-//             autoFocus
-//             type="email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//           />
-//         </Form.Group>
-//         <Form.Group size="lg" controlId="password">
-//           <Form.Label>Password</Form.Label>
-//           <Form.Control
-//             type="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//           />
-//         </Form.Group>
-//         <Button block size="lg" type="submit" disabled={!validateForm()}>
-//           Login
-//         </Button>
-//       </Form>
-//     </div>
-//   );
-// }
