@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Book from './book';
 import '../index.css';
-import ClickableView from './clickableView';
 
 class Recommendations extends Component{
     state = {
@@ -42,19 +41,44 @@ class Recommendations extends Component{
     sideBar() {
         return (
             <div>
-                <ol>
-                    <li>Genre:</li>
-                    <form>
-                        <input type="radio" id="button1" name="genre"/>
-                        <label for="button1">Fiction</label><br />
-                        <input type="radio" id="button2" name="genre"/>
-                        <label for="button2">Comedy</label><br />
-                        <input type="radio" id="button3" name="genre"/>
-                        <label for="button3">Adventure</label>
-                    </form> 
-                </ol>
+                <a onClick = {(e) => this.openFilter(e)}><h2>Filter</h2></a>
+                <div id = "recInput">
+                    <ol>
+                        <li>Genre:</li>
+                        <form>
+                            <input type="radio" className = "input2" id="action" name="genre"/>
+                            <label for="button1">Action</label><br />
+                            <input type="radio" className = "input2" id="adventure" name="genre"/>
+                            <label for="button2">Adventure</label><br />
+                            <input type="radio" className = "input2" id="comedy" name="genre"/>
+                            <label for="button3">Comedy</label>
+                            <input type="radio" className = "input2" id="mystery" name="genre"/>
+                            <label for="button1">Mystery</label><br />
+                            <input type="radio" className = "input2" id="fantasy" name="genre"/>
+                            <label for="button2">Fantasy</label><br />
+                            <input type="radio" className = "input2" id="horror" name="genre"/>
+                            <label for="button3">Horror</label>
+                            <input type="radio" className = "input2" id="scifi" name="genre"/>
+                            <label for="button2">Sci-Fi</label><br />
+                            <input type="radio" className = "input2" id="thriller" name="genre"/>
+                            <label for="button3">Thriller</label>
+                            <input type="radio" className = "input2" id="romance" name="genre"/>
+                            <label for="button2">Romance</label><br />
+                        </form> 
+                    </ol>
+                </div>
             </div>
         );
+    }
+
+    openFilter(event) {
+        event.preventDefault();
+        if (document.getElementById("recInput").style.display == "none") {
+            document.getElementById("recInput").style.display = "block";
+        }
+        else {
+            document.getElementById("recInput").style.display = "none";   
+        }
     }
 
     renderBooks() {

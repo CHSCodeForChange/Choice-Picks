@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import '../index.css'
+import Book from './book';
 
 class Nominations extends Component{
     render() {
         return (
             <div>
-                <p>This is the nominations page!</p>
+                <Book name = "Test"/>
             </div>
         );
     }
