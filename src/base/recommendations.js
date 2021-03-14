@@ -40,8 +40,8 @@ class Recommendations extends Component{
 
     sideBar() {
         return (
-            <div>
-                <a onClick = {(e) => this.openFilter(e)}><h2>Filter</h2></a>
+            <div id = "bigRec">
+                <a onClick = {(e) => this.openFilter(e)}><h2 class = "Filter">Filter</h2></a>
                 <div id = "recInput">
                     <ol>
                         <li>Genre:</li>

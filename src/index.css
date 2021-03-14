@@ -15,7 +15,7 @@
 }
  
 #recommendations {
-  display: none;
+  display: block;
 }
 
 #librarian {
@@ -103,34 +103,63 @@ a {
 /* Recommendations Section */
 .mainbar {
   position: relative;
-  width: 100vh;
   z-index: 0;
-  background: #eee;
+  background: rgb(177, 176, 176);
+  display: block;
+}
+
+.Filter{
+	position: relative;
+	color: rgb(45, 98, 158);
+	float: left;
+	height: 100%;
+	left: 1vh;
+	
+}
+
+#myBtn{
+	color: rgb(45, 98, 158);
+  	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	background-color: rgb(218, 216, 216);
+	border-width: 0px;
+}
+
+#recInput{
+	background-color:rgb(218, 216, 216);
+	padding-left: 17vh;
+	width: 100%;
+}
+
+#bigRec{
+	position:relative;
+	right: 2vh;
 }
 /* Section End */
 
 /* Book Component */
 .book {
-  background-color: #7c3636;
-  float: left;
-  bottom: 20%;
-  border-radius: 5%;
-  width: 30%;
-  text-align: center;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
-  padding-left: 5vh;
-  
+	background-color: white;
+	float: left;
+	text-align: center;
+	padding-left: 1.5%;
 }
 
 .float-picture {
-  text-align: center;
-  border-radius: 8%;
-  margin-left: 20%;
-  padding: 2%;
-  width: 30vh;
-  height: 60vh;
-  background-color: #daafaf;
+	text-align: center;
+  	padding-left: 10%;
+	padding-right: 10%;
+	width: 34vh;
+	padding-bottom: 10%;
+  	background-color: rgb(218, 216, 216);
+} 
+
+.BookTitle {
+	color: rgb(45, 98, 158);
+  	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
 }
 /* Section End */
 
@@ -140,7 +169,7 @@ a {
   bottom: 2em;
   right: 3em;
   border-radius: 5vh;
-  background: #4c76c0;
+  background: rgb(45, 98, 158);
   padding: 1em;
   z-index: 3;
   display: none;
@@ -190,7 +219,7 @@ a {
 } */
 
 .moreInfo {
-  background-color: #fefefe;
+  background-color: #ffffff;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -562,7 +591,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size:14px;
 	font-weight:normal;
-	color:#888888;
+	color: #888;;
 	margin:0;
 }
 h2{
@@ -715,7 +744,7 @@ color: #fff;
 }
 
 .main-section{
-	padding:90px 0 110px;
+	padding:10px 0 10px;
 }
 
 
@@ -1251,8 +1280,8 @@ border: 2px solid #fff;
 ---------------------------------*/
 
 .footer{
-	background:black left top repeat;
-	padding:35px 0 35px;
+	background:rgb(45, 98, 158);
+	padding:5px 0 5px;
 }
 .footer-logo{
 	margin:15px auto 35px;
@@ -1265,7 +1294,7 @@ border: 2px solid #fff;
 	text-align:center;
 }
 .copyright a, .credits a{
-	color:#7cc576;
+	color:rgb(45, 98, 158);
 	font-weight:600;
 	text-decoration: none;
 	transition:all 0.3s ease-in-out;
@@ -1274,7 +1303,7 @@ border: 2px solid #fff;
 }
 
 .copyright a:hover, .credits a:hover {
-	color: #fff;
+	color:grey;
 }
 
 .res-nav_click {
