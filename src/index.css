@@ -3,7 +3,7 @@
 /* Nav */
 #nav {
   position: sticky;
-  top: 0;
+  top: .5vh;
   width: 100%;
   z-index: 1;
 }
@@ -15,7 +15,7 @@
 }
  
 #recommendations {
-  display: block;
+  display: none;
 }
 
 #librarian {
@@ -82,24 +82,6 @@ a {
 }
 /* Section End */
 
-/* Sidebar Styling */
-.sidenav {
-  width: 100vh;
-  height: auto;
-  position: relative;
-  z-index: 0;
-  text-align: left;
-  background: #eee;
-}
-
-.sidenav a {
-  text-decoration: none;
-  font-size: 3vh;
-  color: #2196F3;
-  display: block;
-}
-/* Section End */
-
 /* Recommendations Section */
 .mainbar {
   position: relative;
@@ -108,42 +90,142 @@ a {
   display: block;
 }
 
-.Filter{
-	position: relative;
+#moreInfoBtn{
 	color: rgb(45, 98, 158);
-	float: left;
-	height: 100%;
-	left: 1vh;
-	
-}
-
-#myBtn{
-	color: rgb(45, 98, 158);
-  	font-size: 16px;
+  	font-size: 2.5vh;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
 	background-color: rgb(218, 216, 216);
-	border-width: 0px;
+	border-width: .3vh;
 }
 
-#recInput{
+.recInput{
 	background-color:rgb(218, 216, 216);
-	padding-left: 17vh;
-	width: 100%;
+	width: 95%;
+	margin-left: 3vh;
+	min-height: 12vh;
+	border-radius: 2vh;
 }
 
-#bigRec{
-	position:relative;
-	right: 2vh;
+.filter{
+	position: relative;
+	color: rgb(45, 98, 158);
+	text-align: center;
+	font-size: 4vh;
+}
+
+.filterContent {
+	text-align: left;
+}
+
+.filterCol1 {
+	margin-top: 5vh;
+	padding-left: 5vh;
+	float: left;
+	width: 30%;
+	border-right: .2vh solid;
+	border-color: black;
+}
+.filterCol2 {
+	margin-top: 5vh;
+	float: left;
+	width: 70%;
+	padding-left: 10vh;
+}
+
+.button3 {
+	background-color: #b1891c;
+    border: .2vh solid transparent;
+    white-space: nowrap;
+    font-size: 2vh;
+	border-radius: .5vh;
+    font-weight: normal;
+    text-align: center;
+	vertical-align: middle;
+	width: 50vh;
+    padding: 2vh;
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+	margin-left: 72vh;
+	margin-right: 75vh;
+}
+
+#loadMoreBooks {
+	background-color: #357ebd;
+	border-color: #357ebd;
+    border: .2vh solid transparent;
+    white-space: nowrap;
+    font-size: 3vh;
+	border-radius: .5vh;
+    font-weight: normal;
+    text-align: center;
+	vertical-align: middle;
+	width: 95%;
+    padding: 2vh;
+	margin-top: 5vh;
+	margin-right: 4vh;
+}
+
+.input2 {
+	width: 15vh;
+}
+
+.openFilter {
+	position: absolute;
+	left: 50%;
+	bottom: 7%;
+	display: block;
+	text-align: center;
+	font-size: 5vh;
+	z-index: 1;
+	width: 5vh;
+	height: 5vh;
+	border-bottom: .35vh solid black;
+	border-right: .35vh solid black;
+	margin-bottom: 2vh;
+	transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.closeFilter {
+	position: absolute;
+	left: 48.75%;
+	display: block;
+	text-align: center;
+	font-size: 5vh;
+	z-index: 1;
+	width: 5vh;
+	height: 5vh;
+	border-bottom: .35vh solid black;
+	border-right: .35vh solid black;
+	margin-bottom: 2vh;
+	transform: translate(-50%, 0%) rotate(225deg);
 }
 /* Section End */
 
 /* Book Component */
-.book {
-	background-color: white;
+.bookOutline {
+	background-color: rgb(231, 231, 231);
+	width: 44vh;
+	height: 75vh;
 	float: left;
 	text-align: center;
-	padding-left: 1.5%;
+	padding: auto;
+	margin: 2.5vh;
+	border-radius: 5vh;
+}
+
+.book {
+	width: 44vh;
+	height: 67.5vh;
+	float: left;
+	text-align: center;
+	padding: auto;
+	border-radius: 5vh;
+}
+
+.bookPic {
+	width: 35vh;
+	height: 60vh;
 }
 
 .float-picture {
@@ -165,14 +247,17 @@ a {
 
 /* Up Button */
 .upbtn {
-  position: fixed;
-  bottom: 2em;
-  right: 3em;
-  border-radius: 5vh;
-  background: rgb(45, 98, 158);
-  padding: 1em;
-  z-index: 3;
-  display: none;
+	position: fixed;
+	bottom: 6vh;
+	right: 3.5vh;
+	border-radius: 10vh;
+	background: transparent;
+	height: 6vh;
+	width: 6vh;
+	text-align: center;
+	vertical-align: center;
+	z-index: 1;
+	display: none;
 }
 /* Section End */
 
@@ -180,6 +265,7 @@ a {
 .content {
   padding-top: 5vh;
   padding-bottom: 7.5vh;
+  padding-right: 1.5vh;
   min-width: 100%;
   text-align: center;
   vertical-align: middle;
@@ -188,58 +274,47 @@ a {
 /* Section End */
 
 /* clickable view */
-.moreInfoBox {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 10vh;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-}
-
-.clickableView {
-  z-index: 4;
-  background-color: grey;
-  width: 50%;
-  height: 70%;
-  display: none;
-}
-
-/* #transparentBtn {
-  background-color: yellow;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 3;
-} */
-
-.moreInfo {
-  background-color: #ffffff;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-/* Section End */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 10vh;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	cursor: pointer;
+  }
+  
+  .modal-content {
+	background-color: #fefefe;
+	z-index: 2;
+	margin: auto;
+	padding: 4vh;
+	border: .35vh solid rgb(219, 219, 219);
+	border-radius: 3.5vh;
+	width: 80%;
+	height:90%;
+	cursor: default ;
+  }
+  
+  .close {
+	color: #000000;
+	float: right;
+	font-size: 5vh;
+	font-weight: bold;
+	padding-bottom: 2vh;
+	padding-right: 2vh;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  /* Section End */
 
 /* Login Page Handler */
 #login {
@@ -258,15 +333,14 @@ a {
 	bottom: 7%;
 	display: block;
 	text-align: center;
-	font-size: 30px;
-	z-index: 100;
+	font-size: 6vh;
+	z-index: 1;
 	text-decoration: none;
 	text-shadow: 0;
   width: 1em;
   height: 1em;
-  border-bottom: 2px solid #fac805;
-  border-right: 2px solid #fac805;
-  z-index: 9;
+  border-bottom: .2vh solid #fac805;
+  border-right: .2vh solid #fac805;
   -webkit-transform: translate(-50%, 0%) rotate(45deg);
   -moz-transform: translate(-50%, 0%) rotate(45deg);
   transform: translate(-50%, 0%) rotate(45deg);
@@ -511,36 +585,6 @@ label {
 	margin-top: 2.5vh;
 }
 /* Section end */
-
-/* Recommendations Section */
-#recInput {
-	display: none;
-	animation-name: popin;
-	animation-duration: 0.3s;
-}
-
-@keyframes popin {
-	0% {
-	  transform: translateX(-100%);
-	}
-	25% {
-		transform: translateX(-75%);
-	}
-	50% {
-		transform: translateX(-50%);
-	}
-	75% {
-	  transform: translateX(-25%);
-	}
-	100% {
-	  transform: translateX(0);
-	}
-}
-
-.input2 {
-	width: 15vh;
-}
-/* Section End */
 
 /* CSS Document 2 */
 
