@@ -150,7 +150,38 @@ a {
 	margin-right: 75vh;
 }
 
+.button4 {
+	background-color: #b1891c;
+    border: .2vh solid transparent;
+    white-space: nowrap;
+    font-size: 2vh;
+	border-radius: .5vh;
+    font-weight: normal;
+    text-align: center;
+	vertical-align: middle;
+	width: 50vh;
+    padding: 2vh;
+	margin-top: 2.5vh;
+	margin-bottom: 2.5vh;
+}
+
 #loadMoreBooks {
+	background-color: #357ebd;
+	border-color: #357ebd;
+    border: .2vh solid transparent;
+    white-space: nowrap;
+    font-size: 3vh;
+	border-radius: .5vh;
+    font-weight: normal;
+    text-align: center;
+	vertical-align: middle;
+	width: 95%;
+    padding: 2vh;
+	margin-top: 5vh;
+	margin-right: 4vh;
+}
+
+#loadMoreBooks1 {
 	background-color: #357ebd;
 	border-color: #357ebd;
     border: .2vh solid transparent;
@@ -315,6 +346,8 @@ a {
 	cursor: pointer;
   }
   /* Section End */
+
+  
 
 /* Login Page Handler */
 #login {
@@ -1164,14 +1197,23 @@ border: 2px solid #fff;
 
 /* Contact 
 ---------------------------------*/
+#contactInfo, #contactBox {
+	white-space: nowrap;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+}
+
+#contact {
+	border-radius: 2.5vh;
+}
+
 .main-section.contact{
 	padding:90px 0 100px;
 }
 
 .contact-info-box{
-	font-size:15px;
-	margin:0 0 14px 68px;
-	padding-left:0;
+	font-size:2.2vh;
+	padding-bottom: .75vh;
 }
 .contact-info-box h3{
 	font-size: 15px;

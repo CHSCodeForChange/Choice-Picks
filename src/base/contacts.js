@@ -8,13 +8,13 @@ class Contacts extends Component {
             <div className="container"> 
                 <section className="main-section alabaster" id="contact">
                     <div className="row">
-                        <div className="col-lg-6 col-sm-7">
+                        <div className="col-lg-6" id = "contactInfo">
                             <div className="contact-info-box">
-                                <h3><i class="fas fa-map-marker"></i>Address:</h3>
+                                <h3><i class="fa fa-map-marker"></i>Address:</h3>
                                 <span><a target="__blank" href = "https://www.google.com/maps/place/2140+E+116th+St,+Carmel,+IN+46032/@39.9585644,-86.1199571,17z/data=!3m1!4b1!4m5!3m4!1s0x8814ada097472ab5:0x9f4fc8c69992733e!8m2!3d39.9585603!4d-86.1177631" >2140 E 116th St, Carmel, IN 46032</a></span>
                             </div>
                             <div className="contact-info-box">
-                                <h3><i className="fas fa-phone"></i>Phone:</h3>
+                                <h3><i className="fa fa-phone"></i>Phone:</h3>
                                 <span><a href = "tel: 5554280940">(317) 814-3900</a></span>
                             </div>
                             <div className="contact-info-box">
@@ -34,7 +34,7 @@ class Contacts extends Component {
                                 <a target="__blank"  href="https://www.instagram.com/carmel_library/?hl=en">Click Here</a>
                             </div>
                         </div>
-                        <div className="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
+                        <div className="col-lg-6 col-sm-5 wow fadeInUp delay-05s" id = "contactBox">
                             <div className="form">
                                 <div id="sendmessage">Your message has been sent. Thank you!</div>
                                 <div id="errormessage"></div>
