@@ -849,7 +849,7 @@ color: #fff;
 	overflow:hidden;	
 }
 .main-section.alabaster{
-	background:#fafafa;
+	background:#0f2a59;
 }
 
 /* Featured Work
@@ -1366,21 +1366,21 @@ border: 2px solid #fff;
 ---------------------------------*/
 
 .footer{
-	background:rgb(45, 98, 158);
-	padding:5px 0 5px;
+	background:#0f2a59;
+	padding:30px 0 5px;
 }
 .footer-logo{
 	margin:15px auto 35px;
-	width: 76px;
+	width:76px;
 }
 .copyright, .credits{
-	color:#cccccc;
+	color:#ffffff;
 	font-size:14px;
 	display:block;
 	text-align:center;
 }
 .copyright a, .credits a{
-	color:rgb(45, 98, 158);
+	color:rgb(233, 229, 2);
 	font-weight:600;
 	text-decoration: none;
 	transition:all 0.3s ease-in-out;
@@ -1389,7 +1389,7 @@ border: 2px solid #fff;
 }
 
 .copyright a:hover, .credits a:hover {
-	color:grey;
+	color:rgb(255, 255, 255);
 }
 
 .res-nav_click {
