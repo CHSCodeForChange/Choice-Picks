@@ -272,12 +272,18 @@ body {
   background-color: #ffffff;
 }
 input,
-button,
 select,
 textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+button {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: inherit;
+  color: #000000;
+  background-color: #0dcfff;
 }
 a {
   color: #428bca;
