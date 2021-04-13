@@ -55,7 +55,7 @@ class Nominations extends Component{
                         return (
                             <div className = "bookOutline" key = {index}>
                                 <Book name = {book.name} path = {book.path}/>
-                                <button id="moreInfoBtn" onClick = {() => this.moreInfo(book)}>More Information</button>
+                                <button id="moreInfoBtn" onClick = {() => this.moreInfo(book)}>Nominate</button>
                                 <br />
                             </div>
                         );
