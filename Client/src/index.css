@@ -1366,7 +1366,7 @@ border: 2px solid #fff;
 ---------------------------------*/
 
 .footer{
-	background:rgb(45, 98, 158);
+	background:rgb(15, 42, 89);
 	padding:30px 0 5px;
 }
 .footer-logo{
@@ -1374,13 +1374,13 @@ border: 2px solid #fff;
 	width: 76px;
 }
 .copyright, .credits{
-	color:#cccccc;
+	color:#ffffff;
 	font-size:14px;
 	display:block;
 	text-align:center;
 }
 .copyright a, .credits a{
-	color:rgb(45, 98, 158);
+	color:rgb(233, 229, 2);
 	font-weight:600;
 	text-decoration: none;
 	transition:all 0.3s ease-in-out;
