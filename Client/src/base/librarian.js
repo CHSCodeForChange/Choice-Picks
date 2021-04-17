@@ -1,19 +1,14 @@
 import React, {Component} from 'react';
 import '../index.css';
-import raw from './credentials.txt';
 import Axios from "axios";
 
 class Library extends Component{
     constructor(props) {
         super(props)
-        let lines = []
-        fetch(raw)
-            .then(r => r.text())
-                .then(text => {
-                    lines.push(text.split("\n"));
-        });
         this.state = {
-            lines,
+            //currently manual, but can call getData and set it to lines
+            lines: ["username: admin, password: password",
+            "username: guna, password: asdf"],
             newAccount: false,
             content: true,
             showImg: false,
@@ -24,6 +19,19 @@ class Library extends Component{
         this.signOut = this.signOut.bind(this);
         this.addBook = this.addBook.bind(this);
         this.loadPic = this.loadPic.bind(this);
+    }
+
+    getData() {
+        //problem with this is it is async
+        //this means that before the request is even returned, it is moving on to other parts while running this in the background
+        //moving to other parts is causing issues
+        //finding a way to make ths wait will complete this
+        //minor issue though I think
+        let tempData = Axios.get('http://localhost:3001/getLogin')
+            .then(response => { 
+                return response.data;
+            })
+        return tempData;
     }
 
     render() {
@@ -274,13 +282,13 @@ class Library extends Component{
         let username = document.getElementById("name").value.trim();
         let password = document.getElementById("password").value.trim();
         let authenticated = false;
-        for (let i = 0; i < this.state.lines[0].length; i++) {
-            let line = this.state.lines[0][i];
+        for (let i = 0; i < this.state.lines.length; i++) {
+            let line = this.state.lines[i];
             const beginI = line.indexOf(":") + 2;
             const endI = line.indexOf(",");
             let rUsername = line.substring(beginI, endI).trim();
             if (username === rUsername) {
-                let rPassword = this.state.lines[0][i].substring(endI + 12).trim();
+                let rPassword = this.state.lines[i].substring(endI + 12).trim();
                 if (password === rPassword) {
                     authenticated = true;
                     break;
@@ -298,11 +306,20 @@ class Library extends Component{
         }
     }
 
+    //new accounts are now properly made
     handleNewAccount(event) {
+        //preventing reload
         event.preventDefault()
-        let accPass = document.getElementById("accPass").value;
-        if (accPass === document.getElementById("password").value) {
-            let newU = document.getElementById("newU").value;
+
+        //fetching new credentials
+        let accPass = document.getElementById("accPass").value.trim();
+        let newU = document.getElementById("newU").value.trim();
+        let newP = document.getElementById("newP").value;
+        let confirmP = document.getElementById("confirmP").value;
+
+        //checking if original password is correct
+        if (accPass === document.getElementById("password").value.trim()) {
+            //checking if new username is already taken by someone else
             let alreadyTaken = false;
             for (let i = 0; i < this.state.lines[0].length; i++) {
                 let line = this.state.lines[0][i];
@@ -314,21 +331,17 @@ class Library extends Component{
                 }
             }
             if (!alreadyTaken) {
-                let newP = document.getElementById("newP").value;
-                let confirmP = document.getElementById("confirmP").value;
+                //making sure the passwords match
                 if (newP === confirmP) {
-                    let newLine = "username: " + newU + ", password: " + newP;
-                    // localStorage.setItem('1', newLine);
-                    // console.log(localStorage.getItem('1') + "local storage");
-                    // this.state.lines[0].add(newLine);
-                    // const fs = require('fs');
-                    // fs.appendFile('./credentials.txt', '\nRight there up on Broadway', (err) => {
-                    //     if (err) throw err;
-                    //     console.log('The lyrics were updated!');
-                    // });
-                    // using(StreamWrite sw = new StreamWriter("file.txt"))
-                    // credential.txt
-                    // window.updateFile(newLine);
+                    let newLine = "\nusername: " + newU + ", password: " + newP;
+                    alert(newLine);
+                    //adding it to txt file
+                    Axios.post('http://localhost:3001/login', {
+                    newLine: newLine,
+                    }).then( 
+                        (response) => { alert('Added Successfully') },
+                        (error) => { console.log(error) }
+                    );
                     this.toggle();
                 }
                 else {

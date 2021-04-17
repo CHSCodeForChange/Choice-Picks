@@ -1,44 +1,3 @@
-// var fs = require('fs');
-
-// BrowserFS.install(window);
-// BrowserFS.configure({
-//   fs: "LocalStorage"
-// }, function(e) {
-//   if (e) {
-//     throw e;
-//   }
-// });
-
-//updates credentials in text file
-function updateFile(newLine) {
-    alert(newLine);
-    // window.fs.write(__dirname + '/src/base/credentials.txt', '\n' + newLine);
-}
-
-//keeps nav bar on top
-// function moveScroller() {
-//     var $anchor = $("#scroller-anchor");
-//     var $scroller = $('#scroller');
-
-//     var move = function() {
-//         var st = $(window).scrollTop();
-//         var ot = $anchor.offset().top;
-//         if(st > ot) {
-//             $scroller.css({
-//                 position: "fixed",
-//                 top: "0px"
-//             });
-//         } else {
-//             $scroller.css({
-//                 position: "relative",
-//                 top: ""
-//             });
-//         }
-//     };
-//     $(window).scroll(move);
-//     move();
-// }
-
 //window update settings
 window.onload = function() {
     progressBar();
@@ -53,6 +12,7 @@ window.onscroll = function() {
 //to display different screens
 function changeScreen(screen) {
     if (screen == 1) {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
         document.getElementById('choicePicks').style.display = 'block';
         document.getElementById('recommendations').style.display = 'none';
         document.getElementById('librarian').style.display = 'none';
@@ -84,7 +44,6 @@ function changeScreen(screen) {
         document.getElementById('contacts').style.display = 'none';
         document.getElementById('title').innerHTML = 'Nominations';
     }
-    $('html, body').animate({ scrollTop: 0 }, 'fast');
 }
 
 //handles the logic of the up button

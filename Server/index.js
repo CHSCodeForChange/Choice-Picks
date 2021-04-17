@@ -1,8 +1,30 @@
+//imports
 const express = require("express");
 const app = express();
 const mysql = require("mysql");
-const cors = require("cors");
+const fs = require('fs');
+// import raw from './credentials.txt';
 
+//login related
+app.post("/login", (req) => {
+  const newLine = req.body.newLine;
+  console.log(newLine);
+  fs.appendFile('./credentials.txt', newLine, (err) => {
+  if (err) throw err;
+    console.log('Something went wrong!');
+  });
+})
+
+app.get("/getLogin", (req, res) => {
+  fs.readFile("./credentials.txt", 'utf8', (err, data) => {
+    console.log("hello");
+    if (err) throw err;
+    res.send(data);
+  })
+});
+
+//storing books
+const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
@@ -44,6 +66,7 @@ app.get("/books", (req, res) => {
   });
 });
 
+//port running confirmation
 app.listen(3001, () => {
   console.log("Yey, your server is running on port 3001");
 });

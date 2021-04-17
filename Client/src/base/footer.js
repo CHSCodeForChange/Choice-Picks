@@ -3,9 +3,9 @@ import $ from 'jquery';
 import '../index.css'
 
 class Footer extends Component{
-    render() {
+    render() { 
         return (
-            <section className="main-section alabaster" id="contact">
+            <section className="main-section footer" id="contact">
                 <span className="copyright">&copy; Code For Change. All Rights Reserved</span>
                 <div className="credits">
                     Designed by <a href="https://codeforchange.herokuapp.com/" target="__blank">Code For Change</a> <br/>
