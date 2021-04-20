@@ -106,71 +106,149 @@ class Library extends Component{
                             <div>
                                 <h3>Additional Info:</h3>
                                 <p>*This information is not required, but is necessary for the website to recommend book.*</p>
-                                <h4>Genre</h4>
-                                <div>
-                                    <label>
-                                        Action:   
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Adventure:
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Comedy:   
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Mystery:  
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Fantasy:  
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Horror:   
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Sci-Fi:   
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Thriller: 
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Romance:  
-                                        <input type="checkbox" id = "bAdventure"/>
-                                    </label>
-                                </div>
-                                <h4>Readability</h4>
-                                <div>
-                                    <label>
-                                        Quick & Easy Read:
-                                        <input type="radio" name = "readability" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Medium Read:
-                                        <input type="radio" name = "readability" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Difficult Read:
-                                        <input type="radio" name = "readability" id = "bAdventure"/>
-                                    </label>
-                                </div>
-                                <h4>Other Info</h4>
-                                <div>
-                                    <label>
-                                        Fiction:
-                                        <input type="radio" name = "fiction" id = "bAdventure"/>
-                                    </label>
-                                    <label>
-                                        Non-Fiction:
-                                        <input type="radio" name = "fiction" id = "bAdventure"/>
-                                    </label>
-                                </div>
+                                <table className = "Selectors">
+                                    <tr>
+                                        <th>
+                                            <h4>Genre</h4>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Action</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Adventure</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Comedy</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Mystery</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Fantasy</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Horror</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Sci-Fi</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Thriller</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Romance</label>
+                                        </td>
+                                        <td> 
+                                            <input type="checkbox" id = "bAdventure"/>
+                                        </td> 
+                                    </tr>
+
+                                </table>
+                                <table className = "Selectors">
+                                    <tr>
+                                        <th>
+                                            <h4>Readability</h4>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Quick & Easy Read</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name = "readability" id = "bAdventure"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Medium Read</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name = "readability" id = "bAdventure"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Difficult Read</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name = "readability" id = "bAdventure"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table className = "Selectors">
+                                    <tr>
+                                        <th>
+                                            <h4>Other Info</h4>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Fiction</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name = "fiction" id = "bAdventure"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>Non-Fiction</label>
+                                        </td>
+                                        <td>
+                                            <input type="radio" name = "fiction" id = "bAdventure"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                    
                             </div>
                         </div>
                     </div>
