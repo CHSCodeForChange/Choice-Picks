@@ -13,11 +13,13 @@ class Library extends Component{
             content: true,
             showImg: false,
             path: "",
+            books: [],
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleNewAccount = this.handleNewAccount.bind(this);
         this.signOut = this.signOut.bind(this);
         this.addBook = this.addBook.bind(this);
+        this.getBooks = this.getBooks.bind(this);
         this.loadPic = this.loadPic.bind(this);
     }
 
@@ -67,7 +69,8 @@ class Library extends Component{
     content() {
         const image = (this.state.showImg) ? (<img src= {this.state.path} className = "previewImg"></img>): null;
         const closeBtn = (this.state.showImg) ? (<button className = "button2" onClick = {(e) => this.closePic(e)}>Close Picture</button>): null;
-                
+        const books = (this.state.books);        
+
         return (
             <div className = "Content">
                 <h1 className = "header1">Enter Book Information:</h1>
@@ -269,6 +272,23 @@ class Library extends Component{
                         </div>
                     </div>
                     <button onClick = {(e) => this.addBook(e)} className = "button">Add Book</button>
+                    <div>
+                        <button onClick={(e) => this.getBooks(e)} className = "button">Show Books</button>
+                        {this.state.books.map((val, key) => {
+                        return (
+                            <div>
+                            <div>
+                                <table>
+                                    <tr>
+                                <td>Book Title: {val.bokk_title}   </td>
+                                <td>Author: {val.book_author}</td>
+                                </tr>
+                                </table>
+                            </div>
+                            </div>
+                            )})};
+                    </div>
+
                 </form>
                 <button className = "button1" onClick = {(e) => this.toggle(e)}>New Account</button>
                 <button className = "button1" onClick = {(e) => this.signOut(e)}>Sign Out</button>
@@ -342,6 +362,17 @@ class Library extends Component{
             (error) => { console.log(error) }
         );
     }
+
+    getBooks (event) {
+        event.preventDefault();              
+        Axios.get('http://localhost:3001/books')
+        .then((res)=>{
+            var data = res.data
+            this.setState({books : data})
+        })
+            
+    }
+
 
     loadPic(event) {
         event.preventDefault();
